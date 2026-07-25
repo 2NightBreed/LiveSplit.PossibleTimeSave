@@ -26,7 +26,10 @@ public class PossibleTimeSave : IComponent
 
     public PossibleTimeSave(LiveSplitState state)
     {
-        Formatter = new PossibleTimeSaveFormatter();
+        Formatter = new PossibleTimeSaveFormatter()
+        {
+            UseCustomDeltaTimeFormatter = true
+        };
         InternalComponent = new InfoTimeComponent(null, null, Formatter);
         Settings = new PossibleTimeSaveSettings()
         {
